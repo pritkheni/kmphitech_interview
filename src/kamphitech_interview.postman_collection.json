@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "97449a23-a004-498d-9032-271abe67ce34",
+		"name": "kamphitech_interview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13291320"
+	},
+	"item": [
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"health"
+					]
+				},
+				"description": "for checking api is runnig or not"
+			},
+			"response": []
+		},
+		{
+			"name": "getsudents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/user?limit=10&page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				},
+				"description": "**This end point is for geting student**\n\n- You get studetn who rate their teacher higher to lower\n    \n- you can get pagination if you add limit and page query in route."
+			},
+			"response": []
+		},
+		{
+			"name": "create student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "prit",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "pritkheni@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "profile",
+							"type": "file",
+							"src": "C:\\Users\\ROG\\Downloads\\17740155_159Z_2107.w026.n002.628B.p1.628.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/user/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"id": 0,
+							"key": "id",
+							"value": "201",
+							"type": "string"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get teachers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/teacher",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"teacher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cteate teacher",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "prit",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "pritkheni@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "profile",
+							"type": "file",
+							"src": "C:\\Users\\ROG\\Downloads\\Default_Highest_quality_The_perfect_masterpiece_Perfect_artwor_0 (1).jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/teacher",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"teacher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rate teacher",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"student_id\":\"203\",\r\n    \"teacher_id\":\"33\",\r\n    \"rate\":\"4.9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/user/rate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"203\",\r\n    \"name\":\"heet\",\r\n    \"email\":\"heet@gmail.com\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
